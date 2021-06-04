@@ -35,7 +35,6 @@ public class PatientController {
     private PatientRegister patientRegister= new PatientRegister();
 
     private void clearTextFields(GridPane grid) {
-        // Simple method to clear the text fields in a grid
         for (Node node : grid.getChildren()) {
             if (node instanceof TextField) {
                 // clear

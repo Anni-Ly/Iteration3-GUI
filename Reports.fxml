@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="grid" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.ReportController1"
+          prefHeight="500">
+
+    <Label fx:id="labelDato" text="Dato" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="DatoText"  prefWidth="200" promptText="YYYY-MM-DD" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Label fx:id="labelPostnr" text="Postnr" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="PostnrText"  prefWidth="200" promptText="XXXX" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label fx:id="labelCoronaVariant" text="CoronaVariant" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="CoronaVariantText" prefWidth="200" promptText="CoronaVariant" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+    <TextArea fx:id="ReportListTextArea" prefWidth="830" prefHeight="190"
+
+
+              editable="false" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="4" GridPane.rowSpan="1"
+              text="Do nit be alarmed! This massage is made bu a machine">
+
+        <font>
+            <Font name="Courier New" size="11.0" />
+        </font>
+    </TextArea>
+    <Button fx:id="buttonSearch" text="Search" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#addReport"/>
+    <Button fx:id="buttonClearAll" text="Clear All" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#onClearAll"/>
+
+    <Button fx:id="buttonExportSelected" text="Export Selected" GridPane.columnIndex="0" GridPane.rowIndex="6" onAction="#onExportSelected"/>
+    <Button fx:id="buttonClearResults" text="Clear Results" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#onClearResults"/>
+
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+</GridPane>

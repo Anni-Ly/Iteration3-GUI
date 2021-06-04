@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="grid" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.PatientController"
+          prefHeight="500">
+    <Label fx:id="cprLabel" text="CPR number" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="cprText"  prefWidth="200" promptText="######-####" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Label fx:id="labelFirstName" text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="firstNameText"  prefWidth="200" promptText="First Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label fx:id="labelLastName" text="Last Name" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <TextField fx:id="lastNameText" prefWidth="400" promptText="Last Name" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <Label fx:id="labelPhone" text="Phone" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="phoneText" prefWidth="200" promptText="+## ########" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label fx:id="labelEmail" text="Email" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <TextField fx:id="emailText" prefWidth="400" promptText="Email" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+    <Label fx:id="labelcoronaData" text="Corona Data" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <TextField fx:id="coronaDataText"  prefWidth="200" promptText="Positive/Negative" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Label fx:id="LabelcoronaLocation" text="Corona Location" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+    <TextField fx:id="coronaLocationText"  prefWidth="400" promptText="Test Location" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <Label fx:id="labelsensorData" text="Sensor Data" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <TextField fx:id="sensorDataText"  prefWidth="200" promptText="Sensor type + output" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+    <TextArea fx:id="patientListTextArea" prefWidth="830" prefHeight="190"
+
+
+              editable="false" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="4" GridPane.rowSpan="1"
+              text="Do nit be alarmed! This massage is made bu a machine">
+
+        <font>
+            <Font name="Courier New" size="11.0" />
+        </font>
+    </TextArea>
+    <Button fx:id="buttonAdd" text="Add patient" GridPane.columnIndex="4" GridPane.rowIndex="3" onAction="#onAddPatient"/>
+    <Button fx:id="buttonClearAll" text="Clear all" GridPane.columnIndex="0" GridPane.rowIndex="6" onAction="#onClearAll"/>
+
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+</GridPane>

@@ -10,10 +10,9 @@ import java.util.regex.Pattern;
 
 public class ReportValidator {
 
-    // Class used to check if input data is valid
 
     public static boolean isValidDato(String strDate) {
-        if (strDate == null || strDate.isEmpty()) { //for completeness
+        if (strDate == null || strDate.isEmpty()) { 
             System.out.println("Given value can not be null or empty");
             return false;
         }
@@ -30,7 +29,6 @@ public class ReportValidator {
     }
 
     public static boolean isValidCoronaVariant(String CoronaVariant) {
-        // Sorry Marie-Louise.... '-' not allowed in this stupid validator
 
         if (CoronaVariant.length() > 1 &&
                 CoronaVariant.chars().allMatch(Character::isAlphabetic)) {
@@ -42,7 +40,6 @@ public class ReportValidator {
 
     public static boolean isValidPostnr(String Postnr) {
         boolean yes = false;
-            // Check that only digits are accepted and the length is equals to 4
         if (Postnr.matches("[0-9]+") && Postnr.length() == 4) {
             yes = true;
         }

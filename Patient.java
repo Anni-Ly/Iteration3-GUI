@@ -17,15 +17,12 @@ public class Patient {
     private String cpr;
 
     public Patient(String firstName, String lastName, String inputCPR, String coronaData, String coronaLocation, String sensorData) {
-        // assign the inputName to the field storing the patient's name. (replace the ??? with the field your created earlier)
         this.firstName = firstName;
         this.lastName = lastName;
         this.coronaData = coronaData;
         this.coronaLocation = coronaLocation;
         this.sensorData = sensorData;
 
-
-        // assign the inputCPR to the field storing the patient's CPR-number. (replace the ??? with the field your created earlier)
         this.cpr = inputCPR;
     }
 
@@ -98,7 +95,6 @@ public class Patient {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("ddMMuu");
         LocalDate today = LocalDate.now();
         LocalDate birthdate = LocalDate.parse(cpr.substring(0,6), dateFormatter);
-        // If the birthdate is after today, it's probably in the 1900's. Subtract 100 years.
         if (birthdate.isAfter(today)) { birthdate = birthdate.minusYears(100); }
         int age = Period.between(birthdate, today).getYears();
         return age;

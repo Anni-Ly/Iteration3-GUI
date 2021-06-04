@@ -46,9 +46,6 @@ public class PatientController {
     }
 
     private void resetTextFields(GridPane grid) {
-        // Simple method to reset the style on text fields in a grid which have a style set
-        // and don't touch the other fields
-        // We use it to clear the fields we turned pink
         for (Node node : grid.getChildren()) {
             if (node instanceof TextField) {
                 System.out.println(node.getStyle());
@@ -61,9 +58,6 @@ public class PatientController {
         }
     }
     public static String capitalize(String str) {
-        // Method to make names appear with capital first letter
-        // also turn uppercase letters not in first position into lowercase
-        // sorry McDonald!
         if(str == null || str.isEmpty()) {
             return str;
         }
@@ -82,12 +76,10 @@ public class PatientController {
 
         System.out.println(p1);
 
-        // Change p1's email
         p1.setEmail("mand@ku.dk");
 
         System.out.println("email changed\n"+p1);
 
-        // Set som more attributes for p2;
         p2.setPhoneNumber("+45 26374637");
         p2.setEmail("kvinde@ku.dk");
         p2.setCoronaData("Negative");
@@ -96,18 +88,15 @@ public class PatientController {
 
         System.out.println(p2);
 
-        //PatientRegister patientRegister = new PatientRegister();
         try {
             patientRegister.addPatient(p1);
         } catch (Exception e) {
             e.printStackTrace();
-            //System.out.println(e);
         }
         try {
             patientRegister.addPatient(p2);
         } catch (Exception e) {
             e.printStackTrace();
-            //System.out.println(e);
         }
 
         patientRegister.printPatients();
@@ -140,52 +129,41 @@ public class PatientController {
         String sensorDataInput = sensorDataText.getText();
         boolean validInput= true;
 
-        // validate the user input
 
         if (!DataValidator.isValidCPR(cprInput)){
-            // we need a CPR number in order to register a user
-            // highlight the CPR input field if content is invalid
             cprText.setStyle("-fx-background-color: pink");
             validInput = false;
 
         }
         if (!emailInput.isEmpty() && ! DataValidator.isValidEmail(emailInput)){
-            // email is optional - but if it is there it needs to be valid
             emailText.setStyle("-fx-background-color: pink");
             validInput = false;
         }
 
         if (!phoneInput.isEmpty()  && ! DataValidator.isValidPhone(phoneInput)){
-            // phone is optional - but if it is there it needs to be valid
             phoneText.setStyle("-fx-background-color: pink");
         }
 
         if (firstNameInput.isEmpty() || ! DataValidator.isValidName(firstNameInput)){
-            // We need a valid first name
             firstNameText.setStyle("-fx-background-color: pink");
             validInput = false;
         }
 
         if (lastNameInput.isEmpty() || ! DataValidator.isValidName(lastNameInput)){
-            // We need a valid last name
             lastNameText.setStyle("-fx-background-color: pink");
             validInput = false;
         }
 
         if (coronaDataInput.isEmpty() || ! DataValidator.isValidCovidData(coronaDataInput)){
-            // We need a valid last name
             coronaDataText.setStyle("-fx-background-color: pink");
             validInput = false;
         }
 
         if (coronaLocationInput.isEmpty() || ! DataValidator.isValidCoronaLocation(coronaLocationInput)){
-            // We need a valid last name
             coronaLocationText.setStyle("-fx-background-color: pink");
             validInput = false;
         }
 
-        // Now register the patient in the patient register
-        // alert the user if the patient is already there
 
 
         if (validInput) {
@@ -198,7 +176,6 @@ public class PatientController {
                 resetTextFields(grid);
             } catch (Exception e) {
 
-                // The patient is already there
                 e.printStackTrace();
 
                 cprText.setStyle("-fx-background-color: pink");
@@ -213,11 +190,8 @@ public class PatientController {
             }
 
         } else{
-            // Something is wrong in one or more input fields
-            // Tell the user to correct input
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            //alert.setTitle("Error Dialog");
             alert.setHeaderText("Registration problem");
             alert.setContentText("Correct highlighted fields");
 
@@ -225,7 +199,6 @@ public class PatientController {
             alert.showAndWait();
             resetTextFields(grid);
         }
-        // list the patients
         patientListTextArea.setText(patientRegister.listPatients());
 
     }

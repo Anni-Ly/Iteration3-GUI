@@ -31,7 +31,6 @@ public class ReportController1 {
     private void clearTextFields(GridPane grid) {
         for (Node node : grid.getChildren()) {
             if (node instanceof TextField) {
-                // clear
                 ((TextField) node).setText("");
                 node.setStyle(null);
             }
@@ -42,7 +41,6 @@ public class ReportController1 {
         for (Node node : grid.getChildren()) {
             if (node instanceof TextField) {
                 System.out.println(node.getStyle());
-                // clear
                 if (node.getStyle() != null && !node.getStyle().equals("")) {
                     ((TextField) node).setText("");
                     node.setStyle(null);

@@ -15,19 +15,19 @@ public class Main extends Application {
     static List<GridPane> gridPaneList = new ArrayList<> ();
     private static int index_current = 0;
     @Override
-    public void start(Stage primaryStage) throws Exception {     // a Stage is the main window for a JavaFX application
-        // initialize some test data
+    public void start(Stage primaryStage) throws Exception {    
+
 
         root = FXMLLoader.load(getClass().getResource("Multiscene.fxml"));
         gridPaneList.add(FXMLLoader.load(getClass().getResource("Patients.fxml")));
         gridPaneList.add(FXMLLoader.load(getClass().getResource("Reports.fxml")));
 
-        //root.getChildren().add(gridPanePatients);
-        primaryStage.setTitle("CoronaNet");
-        Scene scene = new Scene(root, 1200, 500); // create a scene window 1200 x 500 pixels
 
-        primaryStage.setScene(scene);                   // add the scene to the stage / application window
-        primaryStage.show();                 // display the stage - important! otherwise nothing happens :-)
+        primaryStage.setTitle("CoronaNet");
+        Scene scene = new Scene(root, 1200, 500); 
+
+        primaryStage.setScene(scene);                  
+        primaryStage.show(); 
 
     }
     public static void main(String[] args) {
